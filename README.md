@@ -1,1 +1,1 @@
-# Point-of-Sales--Heigira-Laravel
+# Point-of-Sales-Heigira-Laravel
