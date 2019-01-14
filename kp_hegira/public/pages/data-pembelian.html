@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Poin of Sale Pisang</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.theme.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Swalayan Maju Terus</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Adi Santoso
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Profil Pengguna</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Pengaturan</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Keluar</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-table fa-fw"></i> Master<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="data-pelanggan.html">Data Pelanggan</a>
+                                </li>
+                                <li>
+                                    <a href="data-pembelian.html">Data Pembelian</a>
+                                </li>
+                                <li>
+                                    <a href="data-pemasok.html">Data Pemasok</a>
+                                </li>
+                                <li>
+                                    <a href="data-gudang.html">Data Gudang</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="tables.html"><i class="fa fa-bar-chart-o fa-fw"></i> Laporan</a>
+                        </li>
+                        <li>
+                            <a href="forms.html"><i class="fa fa-user fa-fw"></i> Kelola Pengguna</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper" class="container-fluid">
+            <div class="row page-header">
+                <div class="col-lg-8">
+                    <h1 class="">Data Pembelian</h1>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">
+                                      <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                        </div>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+            </div>
+            <div class="">
+              <div class="row form-group">
+                <div class="col-sm-4">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ModalAdd">
+                    Tambah Data Pembelian
+                  </button>
+                  <!-- Modal Add -->
+                  <div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Tambah Data Pembelian</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form class="" action="index.html" method="post">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Nama Pembelian</label>
+                              <input type="text" class="form-control" id="exampleInputText1" placeholder="Nama Lengkap">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Alamat</label>
+                              <textarea class="form-control" rows="3" placeholder="Alamat"></textarea>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Nomor Telepon</label>
+                              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nomor Telepon">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Email</label>
+                              <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                          <button type="button" class="btn btn-primary">Simpan</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal Edit -->
+                     <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Edit Data Pelanggan</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="" action="index.html" method="post">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Nama Pelanggan</label>
+                                            <input type="text" class="form-control" id="exampleInputText1" placeholder="Nama Lengkap">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Alamat</label>
+                                            <textarea class="form-control" rows="3" placeholder="Alamat"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Nomor Telepon</label>
+                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nomor Telepon">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Email</label>
+                                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal -->
+
+                    <!-- Modal Hapus -->
+                    <div class="modal fade" id="ModalDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Hapus Data Pelanggan</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Apakah yakin data ingin dihapus?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-danger">Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Modal -->
+                </div>
+              </div>
+            </div>
+            <!-- /.row -->
+            <div class="">
+                <div class="row form-group">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Daftar Data Pelanggan
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length" id="dataTables-example_length">
+                                                <label>Show <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm">
+                                                    <option value="10">10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">50</option>
+                                                    <option value="100">100</option>
+                                                </select> entries</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 70px;">Id Transaksi</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 71px;">Nama Barang</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 74px;">Harga Barang</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 20px;">Jumlah Barang</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;">Total Harga</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 20px;">Total Pembelian</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;">Nama Pemasok</th>
+                                                        <th class="normal" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 39px;">Aksi</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="gradeA odd" role="row">
+                                                        <td class="sorting_1">Gecko</td>
+                                                        <td>Firefox 1.0</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td>Win 98+ / OSX.2+</td>
+                                                        <td class="center">1.7</td>
+                                                        <td class="center">
+                                                            <!-- Button trigger modal -->
+                                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalEdit">Edit</button>
+                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalDel">Hapus</button>
+                                                        </td>
+                                                    
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">
+                                            Showing 1 to 10 of 57 entries
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">
+                                            <ul class="pagination">
+                                                <li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Previous</a></li>
+                                                <li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li>
+                                                <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li>
+                                                <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li>
+                                                <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li>
+                                                <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li>
+                                                <li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li>
+                                                <li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../vendor/raphael/raphael.min.js"></script>
+    <script src="../vendor/morrisjs/morris.min.js"></script>
+    <script src="../data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
